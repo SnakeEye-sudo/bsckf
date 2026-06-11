@@ -24,9 +24,9 @@ const YT_VIDEOS = [
 
 /* ---------------- निदेशक (Directors) ---------------- */
 const DIRECTORS = [
-  { name: "चित्रांश रजनीश श्रीवास्तव", role: "निदेशक (Director)", photo: "assets/img/rajnish.jpg",
+  { name: "चित्रांश रजनीश श्रीवास्तव", role: "निदेशक (Director)", photo: "assets/img/Rajnish.JPG",
     line: "संगठन के मार्गदर्शक — सेवा और संस्कार के संकल्प के साथ।" },
-  { name: "चित्रांश रौनक श्रीवास्तव", role: "निदेशक (Director)", photo: "assets/img/raunak.jpg",
+  { name: "चित्रांश रौनक श्रीवास्तव", role: "निदेशक (Director)", photo: "assets/img/Raunak.jpg",
     line: "युवा ऊर्जा से संगठन को हर जिले-गाँव तक ले जाने वाले।" }
 ];
 
