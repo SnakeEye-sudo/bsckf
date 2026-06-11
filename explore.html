@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>एक्सप्लोर — बिहार का नक्शा | श्री चित्रगुप्त कल्याण फाउंडेशन</title>
+  <meta name="description" content="बिहार के interactive नक्शे पर जिला चुनें, शहर चुनें और वहाँ के सक्रिय सदस्यों से मिलें।">
+  <link rel="icon" href="assets/img/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Mukta:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/extra.css"></head>
+<body>
+
+<header class="site-header scrolled">
+  <div class="container header-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/img/logo.png" alt="फाउंडेशन का लोगो" style="border-radius:50%">
+      <span class="brand-name">श्री चित्रगुप्त कल्याण फाउंडेशन<small>बिहार · सेवा · संस्कार · समर्पण</small></span>
+    </a>
+    <button class="nav-toggle" aria-label="मेन्यू"><span></span><span></span><span></span></button>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">मुखपृष्ठ</a></li>
+        <li><a href="katha.html">हमारी कथा</a></li>
+        <li><a href="districts.html">जिला संगठन</a></li>
+        <li><a href="gallery.html">गैलरी</a></li>
+        <li><a href="samachar.html">समाचार</a></li>
+        <li><a href="daan.html">दान करें</a></li>
+        <li><a href="sampark.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="section-label">एक्सप्लोर 🗺️</span>
+    <h1>बिहार — हमारा कर्मक्षेत्र</h1>
+    <p>नक्शे पर किसी जिले को छुएँ — उसके शहर खुलेंगे, शहर चुनें — वहाँ के सक्रिय सदस्य मिलेंगे।</p>
+  </div>
+</section>
+
+<section style="padding-top:50px">
+  <div class="container">
+    <div class="explore-layout">
+      <div class="map-stage reveal visible" id="mapStage"></div>
+      <div class="explore-panel reveal visible" id="explorePanel">
+        <div class="explore-hint">
+          <span class="big">🗺️</span>
+          नक्शे पर कोई जिला चुनिए —<br>उसकी पूरी कहानी यहाँ खुलेगी।
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/img/logo.png" alt="लोगो" style="border-radius:50%">
+          <strong style="color:var(--gold-light);font-family:var(--font-display)">श्री चित्रगुप्त कल्याण फाउंडेशन</strong>
+        </div>
+        <p style="font-size:.92rem">बिहार के हर जिले में सेवा, संस्कार और समाज कल्याण को समर्पित संस्था।</p>
+      </div>
+      <div>
+        <h4>पृष्ठ</h4>
+        <a href="index.html">मुखपृष्ठ</a>
+        <a href="katha.html">हमारी कथा</a>
+        <a href="districts.html">जिला संगठन</a>
+        <a href="explore.html">एक्सप्लोर</a>
+      </div>
+      <div>
+        <h4>जुड़ें</h4>
+        <a href="parivar.html">WhatsApp परिवार</a>
+        <a href="samachar.html">समाचार</a>
+        <a href="daan.html">दान करें</a>
+        <a href="sampark.html">संपर्क करें</a>
+      </div>
+      <div>
+        <h4>संपर्क</h4>
+        <p style="font-size:.92rem">📍 पटना, बिहार<br>📱 93013 53166<br>📱 95600 62149</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 भगवान श्री चित्रगुप्त कल्याण फाउंडेशन · सर्वाधिकार सुरक्षित ॥ श्री चित्रगुप्ताय नमः ॥</div>
+</footer>
+
+<script src="assets/js/bihar-map.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const stage = document.getElementById('mapStage');
+  const panel = document.getElementById('explorePanel');
+
+  /* असली geography से बना बिहार का नक्शा (bihar-map.js) */
+  const SMALL = ['sheohar', 'arwal', 'sheikhpura', 'lakhisarai', 'jehanabad', 'buxar', 'saharsa'];
+  const cellsSvg = DISTRICTS.map(d => {
+    const c = BIHAR_CELLS[d.id];
+    if (!c) return '';
+    const fs = SMALL.includes(d.id) ? 12 : (d.name.length > 7 ? 16 : 19);
+    return `
+    <g class="d-tile" data-id="${d.id}" tabindex="0" role="button" aria-label="${d.name}">
+      <path class="cell" d="${c.path}"><title>${d.name} — मुख्यालय ${d.hq}</title></path>
+      <text x="${c.cx}" y="${c.cy + 5}" text-anchor="middle" font-size="${fs}">${d.name}</text>
+      ${d.members.length ? `<circle class="m-dot" cx="${c.cx}" cy="${c.cy + 20}" r="5"/>` : ''}
+    </g>`;
+  }).join('');
+
+  stage.innerHTML = `
+  <svg viewBox="0 0 1000 640" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="tileGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#a0202f"/><stop offset="100%" stop-color="#7c1422"/>
+      </linearGradient>
+      <linearGradient id="tileGradHot" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#f4811f"/><stop offset="100%" stop-color="#d96a0b"/>
+      </linearGradient>
+      <filter id="mapGlow" x="-20%" y="-20%" width="140%" height="140%">
+        <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000" flood-opacity=".45"/>
+      </filter>
+    </defs>
+    <path d="${BIHAR_OUTLINE}" fill="#5a0c16" filter="url(#mapGlow)" transform="translate(0,8)"/>
+    <path d="${BIHAR_OUTLINE}" fill="none" stroke="#f2c14e" stroke-width="3" opacity=".9"/>
+    ${cellsSvg}
+    <text x="500" y="632" text-anchor="middle" font-size="17" fill="#f2c14e" style="font-family:'Mukta',sans-serif;font-weight:600">बिहार — किसी भी जिले पर click करें</text>
+  </svg>
+  <div class="map-tip" id="mapTip"></div>`;
+
+  /* hover tooltip (छोटे जिलों के नाम के लिए) */
+  const tip = document.getElementById('mapTip');
+  stage.addEventListener('mousemove', e => {
+    const g = e.target.closest('.d-tile');
+    if (!g) { tip.style.opacity = 0; return; }
+    const d = getDistrict(g.dataset.id);
+    tip.textContent = d.name + ' · ' + d.hq;
+    tip.style.opacity = 1;
+    const r = stage.getBoundingClientRect();
+    tip.style.left = (e.clientX - r.left + 14) + 'px';
+    tip.style.top = (e.clientY - r.top - 14) + 'px';
+  });
+  stage.addEventListener('mouseleave', () => tip.style.opacity = 0);
+
+  const initial = s => { const t = (s||'').replace(/^चित्रांश\s*/, '').trim(); return t && t[0] !== '—' ? t[0] : '🙏'; };
+
+  function memberHtml(m) {
+    return `
+    <div class="member-card" style="margin-bottom:12px">
+      <div class="member-photo">${m.photo ? `<img src="${m.photo}" alt="${m.name}">` : initial(m.name)}</div>
+      <div>
+        <div class="m-role">${m.role || 'सक्रिय सदस्य'}</div>
+        <h4>${m.name}</h4>
+        <p>💼 ${m.profession || '—'}<br>📍 ${m.address || m.city || '—'}${m.phone ? `<br>📞 <strong>${m.phone}</strong>` : ''}</p>
+      </div>
+    </div>`;
+  }
+
+  function showDistrict(d, city) {
+    const list = city ? d.members.filter(m => m.city === city) : d.members;
+    panel.innerHTML = `
+      <span class="section-label">${d.en}</span>
+      <h3>${d.name} जिला</h3>
+      <p style="color:var(--ink-soft);font-size:.92rem;margin:6px 0 14px">मुख्यालय: <strong>${d.hq}</strong> · जिला प्रमुख: <strong>${d.pramukh.name}</strong> · उपप्रमुख: <strong>${d.upPramukh.name}</strong></p>
+      <div class="city-chips" style="justify-content:flex-start;margin-bottom:18px">
+        <button class="city-chip ${!city ? 'active' : ''}" data-city="">पूरा जिला</button>
+        ${d.cities.map(c => `<button class="city-chip ${c === city ? 'active' : ''}" data-city="${c}">${c}</button>`).join('')}
+      </div>
+      <h4 style="font-family:var(--font-body);font-weight:700;color:var(--maroon);margin-bottom:12px">
+        ${city ? city + ' के सक्रिय सदस्य' : 'सक्रिय सदस्य'} (${list.length})
+      </h4>
+      ${list.length ? list.map(memberHtml).join('') :
+        `<div class="empty-state" style="padding:26px 16px">🙏 ${city || 'इस जिले'} की सदस्य सूची जल्द जुड़ेगी।<br><a href="https://wa.me/${NGO.whatsapp1}?text=${encodeURIComponent('🙏 मैं ' + d.name + (city ? ' (' + city + ')' : '') + ' से हूँ, फाउंडेशन से जुड़ना चाहता/चाहती हूँ।')}" target="_blank" rel="noopener" style="font-weight:700;color:#128c7e">अपना नाम जुड़वाएँ ➤</a></div>`}
+      <div style="margin-top:18px;text-align:center">
+        <a class="btn btn-maroon" href="district.html?d=${d.id}" style="font-size:.9rem;padding:10px 24px">पूरा जिला पृष्ठ खोलें →</a>
+      </div>`;
+    panel.querySelectorAll('.city-chip').forEach(b =>
+      b.addEventListener('click', () => showDistrict(d, b.dataset.city || '')));
+  }
+
+  stage.addEventListener('click', e => {
+    const g = e.target.closest('.d-tile'); if (!g) return;
+    stage.querySelectorAll('.d-tile').forEach(t => t.classList.remove('sel'));
+    g.classList.add('sel');
+    showDistrict(getDistrict(g.dataset.id), '');
+    if (window.innerWidth < 900) panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+  stage.addEventListener('keydown', e => {
+    if (e.key !== 'Enter') return;
+    const g = e.target.closest('.d-tile'); if (!g) return;
+    g.dispatchEvent(new Event('click', { bubbles: true }));
+  });
+});
+</script>
+</body>
+</html>

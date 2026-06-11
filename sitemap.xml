@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- NOTE: Deploy ke baad agar URL bsckf.vercel.app se alag mila to neeche sab jagah domain badal dena -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://bsckf.vercel.app/</loc><priority>1.0</priority></url>
+  <url><loc>https://bsckf.vercel.app/katha.html</loc><priority>0.9</priority></url>
+  <url><loc>https://bsckf.vercel.app/kathayen.html</loc><priority>0.9</priority></url>
+  <url><loc>https://bsckf.vercel.app/kaithi.html</loc><priority>0.9</priority></url>
+  <url><loc>https://bsckf.vercel.app/districts.html</loc><priority>0.9</priority></url>
+  <url><loc>https://bsckf.vercel.app/explore.html</loc><priority>0.8</priority></url>
+  <url><loc>https://bsckf.vercel.app/parivar.html</loc><priority>0.8</priority></url>
+  <url><loc>https://bsckf.vercel.app/gallery.html</loc><priority>0.6</priority></url>
+  <url><loc>https://bsckf.vercel.app/samachar.html</loc><priority>0.8</priority></url>
+  <url><loc>https://bsckf.vercel.app/daan.html</loc><priority>0.7</priority></url>
+  <url><loc>https://bsckf.vercel.app/sampark.html</loc><priority>0.7</priority></url>
+  <url><loc>https://bsckf.vercel.app/terms.html</loc><priority>0.3</priority></url>
+</urlset>

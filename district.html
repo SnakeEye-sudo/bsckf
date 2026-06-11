@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>जिला विवरण | श्री चित्रगुप्त कल्याण फाउंडेशन</title>
+  <meta name="description" content="जिले के प्रमुख, उपप्रमुख एवं सक्रिय सदस्यों का पूरा विवरण।">
+  <link rel="icon" href="assets/img/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Mukta:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/extra.css"></head>
+<body>
+
+<header class="site-header scrolled">
+  <div class="container header-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/img/logo.png" alt="फाउंडेशन का लोगो" style="border-radius:50%">
+      <span class="brand-name">श्री चित्रगुप्त कल्याण फाउंडेशन<small>बिहार · सेवा · संस्कार · समर्पण</small></span>
+    </a>
+    <button class="nav-toggle" aria-label="मेन्यू"><span></span><span></span><span></span></button>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">मुखपृष्ठ</a></li>
+        <li><a href="katha.html">हमारी कथा</a></li>
+        <li><a href="districts.html">जिला संगठन</a></li>
+        <li><a href="gallery.html">गैलरी</a></li>
+        <li><a href="samachar.html">समाचार</a></li>
+        <li><a href="daan.html">दान करें</a></li>
+        <li><a href="sampark.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="district-badge"><span id="dBadge">🛕</span></div>
+    <h1 id="dName">जिला</h1>
+    <p id="dSub">मुख्यालय — · बिहार</p>
+  </div>
+</section>
+
+<section style="padding-top:60px">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-label">नेतृत्व</span>
+      <h2>जिला प्रमुख एवं उपप्रमुख</h2>
+    </div>
+    <div class="leader-grid" id="leaderGrid"></div>
+  </div>
+</section>
+
+<section class="bg-cream-deep">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-label">क्षेत्र</span>
+      <h2>शहर एवं प्रखंड</h2>
+      <p>किसी शहर पर click करें — वहाँ के सक्रिय सदस्य नीचे दिखेंगे।</p>
+    </div>
+    <div class="city-chips" id="cityChips"></div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-label">हमारा परिवार</span>
+      <h2 id="memTitle">सक्रिय सदस्य</h2>
+    </div>
+    <div class="member-grid" id="memberGrid"></div>
+    <div class="empty-state" id="memEmpty" style="display:none">
+      🙏 इस सूची में सदस्य जल्द जोड़े जाएँगे।<br>
+      <strong>अपना नाम जुड़वाने के लिए</strong> नीचे WhatsApp button से संपर्क करें।
+    </div>
+  </div>
+</section>
+
+
+<section class="bg-maroon">
+  <div class="container" style="text-align:center">
+    <h2 class="reveal">इस जिले की टीम से जुड़ें</h2>
+    <p class="reveal d1" style="max-width:600px;margin:14px auto 28px">सदस्यता के लिए WhatsApp पर संदेश भेजें — आपको आपके जिले की टीम से जोड़ दिया जाएगा।</p>
+    <a id="joinWa" href="#" target="_blank" rel="noopener" class="btn btn-saffron reveal d2">WhatsApp पर जुड़ें ➤</a>
+    <a href="districts.html" class="btn btn-gold-outline reveal d3" style="margin-left:10px">← सभी जिले</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/img/logo.png" alt="लोगो" style="border-radius:50%">
+          <strong style="color:var(--gold-light);font-family:var(--font-display)">श्री चित्रगुप्त कल्याण फाउंडेशन</strong>
+        </div>
+        <p style="font-size:.92rem">बिहार के हर जिले में सेवा, संस्कार और समाज कल्याण को समर्पित संस्था।</p>
+      </div>
+      <div>
+        <h4>पृष्ठ</h4>
+        <a href="index.html">मुखपृष्ठ</a>
+        <a href="katha.html">हमारी कथा</a>
+        <a href="districts.html">जिला संगठन</a>
+        <a href="explore.html">एक्सप्लोर</a>
+      </div>
+      <div>
+        <h4>जुड़ें</h4>
+        <a href="parivar.html">WhatsApp परिवार</a>
+        <a href="samachar.html">समाचार</a>
+        <a href="daan.html">दान करें</a>
+        <a href="sampark.html">संपर्क करें</a>
+      </div>
+      <div>
+        <h4>संपर्क</h4>
+        <p style="font-size:.92rem">📍 पटना, बिहार<br>📱 93013 53166<br>📱 95600 62149</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 भगवान श्री चित्रगुप्त कल्याण फाउंडेशन · सर्वाधिकार सुरक्षित ॥ श्री चित्रगुप्ताय नमः ॥</div>
+</footer>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const id = new URLSearchParams(location.search).get('d');
+  const d = getDistrict(id) || DISTRICTS[0];
+  document.title = d.name + ' — जिला संगठन | श्री चित्रगुप्त कल्याण फाउंडेशन';
+  document.getElementById('dName').textContent = d.name + ' जिला';
+  document.getElementById('dBadge').textContent = d.name[0];
+  document.getElementById('dSub').textContent = 'मुख्यालय: ' + d.hq + ' · बिहार · ' + d.en;
+
+  const initial = s => { const t = (s||'').replace(/^चित्रांश\s*/, '').trim(); return t && t[0] !== '—' ? t[0] : '🙏'; };
+  const photoEl = p => p.photo
+    ? `<img src="${p.photo}" alt="${p.name}">`
+    : `<div class="ph-avatar">${initial(p.name)}</div>`;
+
+  /* नेतृत्व cards */
+  document.getElementById('leaderGrid').innerHTML = [d.pramukh, d.upPramukh].map((p, i) => `
+    <div class="leader-card reveal visible" style="transition-delay:${i * .15}s">
+      <div class="leader-top"><div class="dc-role">${p.role}</div></div>
+      <div class="leader-photo">${photoEl(p)}</div>
+      <div class="leader-body">
+        <h3>${p.name}</h3>
+        <ul class="leader-meta">
+          <li><span>💼</span> ${p.profession || 'विवरण जल्द'}</li>
+          <li><span>📍</span> ${p.address || (p.city || d.hq) + ', ' + d.name}</li>
+          <li><span>📞</span> ${p.phone ? `<a href="tel:+91${p.phone}"><strong>${p.phone}</strong></a>` : 'संपर्क जल्द'}</li>
+          ${p.phone ? `<li><span>💬</span> <a href="https://wa.me/91${p.phone}" target="_blank" rel="noopener" style="color:#128c7e;font-weight:700">WhatsApp करें</a></li>` : ''}
+        </ul>
+      </div>
+    </div>`).join('');
+
+  /* शहर chips + member filter */
+  const chips = document.getElementById('cityChips');
+  const memGrid = document.getElementById('memberGrid');
+  const memEmpty = document.getElementById('memEmpty');
+  const memTitle = document.getElementById('memTitle');
+
+  function showMembers(city) {
+    memTitle.textContent = city ? city + ' के सक्रिय सदस्य' : d.name + ' के सक्रिय सदस्य';
+    const list = city ? d.members.filter(m => m.city === city) : d.members;
+    memGrid.innerHTML = list.map((m, i) => `
+      <div class="member-card reveal visible" style="transition-delay:${Math.min(i * .06, .5)}s">
+        <div class="member-photo">${m.photo ? `<img src="${m.photo}" alt="${m.name}">` : initial(m.name)}</div>
+        <div>
+          <div class="m-role">${m.role || 'सक्रिय सदस्य'}</div>
+          <h4>${m.name}</h4>
+          <p>💼 ${m.profession || '—'}<br>📍 ${m.address || m.city || '—'}${m.phone ? `<br>📞 <a href="tel:+91${m.phone}"><strong>${m.phone}</strong></a>` : ''}</p>
+        </div>
+      </div>`).join('');
+    memEmpty.style.display = list.length ? 'none' : 'block';
+  }
+
+  chips.innerHTML = `<button class="city-chip active" data-city="">पूरा जिला</button>` +
+    d.cities.map(c => `<button class="city-chip" data-city="${c}">${c}</button>`).join('');
+  chips.addEventListener('click', e => {
+    const b = e.target.closest('.city-chip'); if (!b) return;
+    chips.querySelectorAll('.city-chip').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    showMembers(b.dataset.city);
+    document.getElementById('memTitle').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+  showMembers('');
+
+  /* Join WhatsApp link */
+  document.getElementById('joinWa').href =
+    `https://wa.me/${NGO.whatsapp1}?text=` + encodeURIComponent(`🙏 जय चित्रगुप्त! मैं ${d.name} जिले से हूँ और फाउंडेशन से जुड़ना चाहता/चाहती हूँ।`);
+});
+</script>
+</body>
+</html>

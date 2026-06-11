@@ -1,0 +1,16 @@
+{
+  "name": "भगवान श्री चित्रगुप्त कल्याण फाउंडेशन",
+  "short_name": "BSCKF",
+  "description": "बिहार के हर जिले में सेवा, संस्कार और समाज कल्याण को समर्पित संस्था।",
+  "lang": "hi",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#45080f",
+  "theme_color": "#6b0f1a",
+  "icons": [
+    { "src": "assets/img/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/img/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}

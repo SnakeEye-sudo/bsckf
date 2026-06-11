@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WhatsApp परिवार — हमारे समूह | श्री चित्रगुप्त कल्याण फाउंडेशन</title>
+  <meta name="description" content="फाउंडेशन के 22+ WhatsApp समूह — शिक्षा, रोजगार, विवाह, व्यवसाय, सेवा — अपनी रुचि का समूह join करें।">
+  <link rel="icon" href="assets/img/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Mukta:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/extra.css"></head>
+<body>
+
+<header class="site-header scrolled">
+  <div class="container header-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/img/logo.png" alt="फाउंडेशन का लोगो" style="border-radius:50%">
+      <span class="brand-name">श्री चित्रगुप्त कल्याण फाउंडेशन<small>बिहार · सेवा · संस्कार · समर्पण</small></span>
+    </a>
+    <button class="nav-toggle" aria-label="मेन्यू"><span></span><span></span><span></span></button>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">मुखपृष्ठ</a></li>
+        <li><a href="katha.html">हमारी कथा</a></li>
+        <li><a href="districts.html">जिला संगठन</a></li>
+        <li><a href="gallery.html">गैलरी</a></li>
+        <li><a href="samachar.html">समाचार</a></li>
+        <li><a href="daan.html">दान करें</a></li>
+        <li><a href="sampark.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="section-label">हमारा परिवार 💚</span>
+    <h1>WhatsApp समूह — एक click में जुड़ें</h1>
+    <p>शिक्षा, रोजगार, विवाह, व्यवसाय, सेवा — हर विषय का अपना समूह। अपनी रुचि चुनें और परिवार का हिस्सा बनें।</p>
+  </div>
+</section>
+
+<section style="padding-top:56px">
+  <div class="container">
+    <div class="groups-grid" id="groupsGrid"></div>
+  </div>
+</section>
+
+
+<section class="bg-maroon">
+  <div class="container" style="text-align:center">
+    <h2 class="reveal">सीधे NGO से बात करनी है?</h2>
+    <p class="reveal d1" style="margin:14px auto 28px">हमारे आधिकारिक WhatsApp नंबर — किसी भी जानकारी के लिए संदेश भेजें।</p>
+    <div class="reveal d2">
+      <a id="waBtn1" href="#" target="_blank" rel="noopener" class="btn btn-saffron">💬 93013 53166</a>
+      <a id="waBtn2" href="#" target="_blank" rel="noopener" class="btn btn-gold-outline" style="margin-left:10px">💬 95600 62149</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/img/logo.png" alt="लोगो" style="border-radius:50%">
+          <strong style="color:var(--gold-light);font-family:var(--font-display)">श्री चित्रगुप्त कल्याण फाउंडेशन</strong>
+        </div>
+        <p style="font-size:.92rem">बिहार के हर जिले में सेवा, संस्कार और समाज कल्याण को समर्पित संस्था।</p>
+      </div>
+      <div>
+        <h4>पृष्ठ</h4>
+        <a href="index.html">मुखपृष्ठ</a>
+        <a href="katha.html">हमारी कथा</a>
+        <a href="districts.html">जिला संगठन</a>
+        <a href="explore.html">एक्सप्लोर</a>
+      </div>
+      <div>
+        <h4>जुड़ें</h4>
+        <a href="parivar.html">WhatsApp परिवार</a>
+        <a href="samachar.html">समाचार</a>
+        <a href="daan.html">दान करें</a>
+        <a href="sampark.html">संपर्क करें</a>
+      </div>
+      <div>
+        <h4>संपर्क</h4>
+        <p style="font-size:.92rem">📍 पटना, बिहार<br>📱 93013 53166<br>📱 95600 62149</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 भगवान श्री चित्रगुप्त कल्याण फाउंडेशन · सर्वाधिकार सुरक्षित ॥ श्री चित्रगुप्ताय नमः ॥</div>
+</footer>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('groupsGrid').innerHTML = GROUPS.map((g, i) => `
+    <div class="group-card reveal visible" style="transition-delay:${Math.min(i * .04, .5)}s">
+      <div class="group-icon">${g.icon}</div>
+      <div class="group-info">
+        <h3>${g.name}</h3>
+        ${g.link
+          ? `<a class="group-join" href="${g.link}" target="_blank" rel="noopener">Join करें ➤</a>`
+          : `<span class="group-join disabled">लिंक जल्द आएगा</span>`}
+      </div>
+    </div>`).join('');
+
+  const msg = encodeURIComponent('🙏 जय चित्रगुप्त! मुझे फाउंडेशन के बारे में जानकारी चाहिए।');
+  document.getElementById('waBtn1').href = `https://wa.me/${NGO.whatsapp1}?text=${msg}`;
+  document.getElementById('waBtn2').href = `https://wa.me/${NGO.whatsapp2}?text=${msg}`;
+});
+</script>
+</body>
+</html>

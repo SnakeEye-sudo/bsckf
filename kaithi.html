@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>कैथी लिपि की सम्पूर्ण पाठशाला | श्री चित्रगुप्त कल्याण फाउंडेशन</title>
+  <meta name="description" content="कैथी लिपि सीखें — इतिहास, वर्णमाला, मात्राएँ, शब्द अभ्यास और परीक्षा। बिहार की ऐतिहासिक लिपि को बचाने का अभियान।">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Mukta:wght@400;500;600;700&family=Noto+Sans+Kaithi&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/extra.css">
+  <style>
+    .kaithi { font-family: 'Noto Sans Kaithi', sans-serif; }
+    .k-table { width: 100%; border-collapse: collapse; background: var(--white); border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); }
+    .k-table th { background: linear-gradient(135deg, var(--maroon), var(--maroon-deep)); color: var(--gold-light); padding: 12px; font-family: var(--font-body); letter-spacing: 1px; }
+    .k-table td { text-align: center; padding: 14px 8px; border: 1px solid var(--cream-deep); }
+    .k-glyph { font-size: 2rem; color: var(--maroon); display: block; line-height: 1.2; }
+    .k-dev { font-size: 1.05rem; font-weight: 700; color: var(--saffron-deep); }
+    .k-cells { display: grid; grid-template-columns: repeat(auto-fill, minmax(86px, 1fr)); gap: 10px; }
+    .k-cell { background: var(--white); border-radius: 12px; box-shadow: var(--shadow); text-align: center; padding: 12px 6px; transition: transform .25s; border-bottom: 3px solid var(--gold-light); }
+    .k-cell:hover { transform: translateY(-4px) scale(1.05); border-bottom-color: var(--saffron); }
+    .lesson-head { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+    .lesson-num { width: 52px; height: 52px; flex: 0 0 52px; border-radius: 50%; display: grid; place-items: center; background: conic-gradient(var(--gold), var(--saffron), var(--gold)); color: var(--maroon); font-family: var(--font-display); font-size: 1.4rem; }
+    .lesson-done { margin-left: auto; }
+    .k-progress-wrap { background: var(--white); border-radius: 100px; padding: 6px; box-shadow: var(--shadow); max-width: 560px; margin: 0 auto 10px; }
+    .k-progress { height: 16px; border-radius: 100px; width: 0; background: linear-gradient(90deg, var(--saffron), var(--gold-light)); transition: width .8s cubic-bezier(.2,.8,.3,1); }
+    .quiz-opt { display: block; width: 100%; text-align: left; margin: 8px 0; padding: 13px 18px; border-radius: 12px; border: 2px solid var(--cream-deep); background: var(--white); font-family: var(--font-body); font-size: 1.05rem; cursor: pointer; transition: .2s; }
+    .quiz-opt:hover { border-color: var(--gold); }
+    .quiz-opt.right { border-color: #1e9e50; background: #eaf9f0; }
+    .quiz-opt.wrong { border-color: #c0392b; background: #fdeeec; }
+    .hero-badge { font-size: 3.2rem; animation: bobble 2.2s ease-in-out infinite; display: inline-block; }
+  </style></head>
+<body>
+
+<header class="site-header scrolled">
+  <div class="container header-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/img/logo.png" alt="फाउंडेशन का लोगो">
+      <span class="brand-name">श्री चित्रगुप्त कल्याण फाउंडेशन<small>बिहार · सेवा · संस्कार · समर्पण</small></span>
+    </a>
+    <button class="nav-toggle" aria-label="मेन्यू"><span></span><span></span><span></span></button>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">मुखपृष्ठ</a></li>
+        <li><a href="katha.html">हमारी कथा</a></li>
+        <li><a href="districts.html">जिला संगठन</a></li>
+        <li><a href="gallery.html">गैलरी</a></li>
+        <li><a href="samachar.html">समाचार</a></li>
+        <li><a href="daan.html">दान करें</a></li>
+        <li><a href="sampark.html">संपर्क</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="section-label">धरोहर बचाओ अभियान ✍️</span>
+    <h1>कैथी लिपि की सम्पूर्ण पाठशाला</h1>
+    <p>जो लिपि कभी बिहार की अदालतों, बहियों और चिट्ठियों की भाषा थी, उसे फिर से जीवित करें। पहले अक्षर से अंतिम परीक्षा तक — सब यहीं, निःशुल्क।</p>
+    <div style="margin-top:22px"><span class="kaithi" style="font-size:2.4rem;color:var(--gold-light)">&#x1108D;&#x110B6;&#x1109F;&#x110B2;</span> <span style="color:#f7dfae;font-size:1rem">← यही है "कैथी", कैथी में!</span></div>
+  </div>
+</section>
+
+<section style="padding-top:50px;padding-bottom:30px">
+  <div class="container">
+    <div class="k-progress-wrap"><div class="k-progress" id="kProgress"></div></div>
+    <p style="text-align:center;color:var(--ink-soft);font-size:.92rem">आपकी प्रगति: <strong id="kProgressTxt">0%</strong> — हर पाठ के अंत में "पाठ पूरा ✓" दबाते जाएँ</p>
+  </div>
+</section>
+
+<section style="padding-top:10px">
+  <div class="container" style="max-width:880px">
+
+    <!-- पाठ 1: इतिहास -->
+    <article class="form-card reveal" style="max-width:100%;text-align:left;margin-bottom:34px" id="lesson1">
+      <div class="lesson-head">
+        <div class="lesson-num">१</div>
+        <h2 style="font-size:1.45rem">कैथी क्या है? (इतिहास व सिद्धांत)</h2>
+        <button class="btn btn-saffron lesson-done" data-lesson="1" style="padding:8px 18px;font-size:.85rem">पाठ पूरा ✓</button>
+      </div>
+      <p style="margin-bottom:12px"><strong>कैथी</strong> (कायथी / कायस्थी) — नाम ही <strong>"कायस्थ"</strong> से बना है। यह वही लिपि है जिसे कायस्थ लेखकों ने सदियों तक बिहार, पूर्वी उत्तर प्रदेश और झारखंड में राजकाज, अदालती दस्तावेज़ों, ज़मीन के कागज़ात (खतियान), बही-खातों और चिट्ठियों के लिए उपयोग किया।</p>
+      <p style="margin-bottom:12px">16वीं से 20वीं शताब्दी तक यह उत्तर भारत की सबसे व्यापक व्यावहारिक लिपियों में थी — ब्रिटिश काल में बिहार की अदालतों की <strong>आधिकारिक लिपि</strong> भी रही। भोजपुरी, मगही, मैथिली, अवधी और हिंदुस्तानी — सब इसमें लिखी जाती थीं।</p>
+      <p style="margin-bottom:12px">धीरे-धीरे देवनागरी के प्रचलन से कैथी लुप्तप्राय हो गई। आज भी बिहार के लाखों पुराने ज़मीनी दस्तावेज़ कैथी में हैं — जिन्हें पढ़ने वाले गिने-चुने लोग बचे हैं। <strong>इसीलिए यह अभियान</strong> — ताकि हमारी पीढ़ी अपने ही दादा-परदादा की लिखावट पढ़ सके।</p>
+      <p><strong>अच्छी खबर:</strong> 2009 में कैथी को Unicode (U+11080) में स्थान मिला — यानी अब यह digital रूप से अमर है। नीचे के सारे अक्षर असली कैथी Unicode हैं।</p>
+    </article>
+
+    <!-- पाठ 2: स्वर -->
+    <article class="form-card reveal" style="max-width:100%;text-align:left;margin-bottom:34px" id="lesson2">
+      <div class="lesson-head">
+        <div class="lesson-num">२</div>
+        <h2 style="font-size:1.45rem">स्वर (Vowels)</h2>
+        <button class="btn btn-saffron lesson-done" data-lesson="2" style="padding:8px 18px;font-size:.85rem">पाठ पूरा ✓</button>
+      </div>
+      <p style="margin-bottom:16px">कैथी में 10 मूल स्वर हैं। ध्यान दें — कैथी में देवनागरी जैसी ऊपर की पूरी रेखा (शिरोरेखा) प्रायः नहीं होती, अक्षर खुले और तेज़ लिखे जाते हैं (आख़िर मुंशियों को तेज़ लिखना होता था!)।</p>
+      <div class="k-cells" id="vowelCells"></div>
+    </article>
+
+    <!-- पाठ 3: व्यंजन -->
+    <article class="form-card reveal" style="max-width:100%;text-align:left;margin-bottom:34px" id="lesson3">
+      <div class="lesson-head">
+        <div class="lesson-num">३</div>
+        <h2 style="font-size:1.45rem">व्यंजन (Consonants)</h2>
+        <button class="btn btn-saffron lesson-done" data-lesson="3" style="padding:8px 18px;font-size:.85rem">पाठ पूरा ✓</button>
+      </div>
+      <p style="margin-bottom:16px">पूरे 35 व्यंजन — क्रम बिल्कुल देवनागरी जैसा (क-वर्ग, च-वर्ग, ट-वर्ग, त-वर्ग, प-वर्ग, अंतःस्थ, ऊष्म)। रोज़ 5 अक्षर याद करें — एक हफ़्ते में पूरी वर्णमाला!</p>
+      <div class="k-cells" id="consCells"></div>
+    </article>
+
+
+    <!-- पाठ 4: मात्राएँ -->
+    <article class="form-card reveal" style="max-width:100%;text-align:left;margin-bottom:34px" id="lesson4">
+      <div class="lesson-head">
+        <div class="lesson-num">४</div>
+        <h2 style="font-size:1.45rem">मात्राएँ व चिह्न</h2>
+        <button class="btn btn-saffron lesson-done" data-lesson="4" style="padding:8px 18px;font-size:.85rem">पाठ पूरा ✓</button>
+      </div>
+      <p style="margin-bottom:16px">मात्राएँ देवनागरी की तरह ही व्यंजन से जुड़ती हैं — "क" पर लगाकर देखिए:</p>
+      <div style="overflow-x:auto"><table class="k-table" id="matraTable"></table></div>
+      <p style="margin-top:14px;font-size:.92rem;color:var(--ink-soft)">💡 हलंत (्) के लिए कैथी विराम चिह्न लगता है, और वाक्य के अंत में दंड <span class="kaithi">&#x110C0;</span> — बिल्कुल "।" की तरह।</p>
+    </article>
+
+    <!-- पाठ 5: शब्द -->
+    <article class="form-card reveal" style="max-width:100%;text-align:left;margin-bottom:34px" id="lesson5">
+      <div class="lesson-head">
+        <div class="lesson-num">५</div>
+        <h2 style="font-size:1.45rem">शब्द अभ्यास</h2>
+        <button class="btn btn-saffron lesson-done" data-lesson="5" style="padding:8px 18px;font-size:.85rem">पाठ पूरा ✓</button>
+      </div>
+      <p style="margin-bottom:16px">अब असली मज़ा — पूरे शब्द पढ़िए। पहले कैथी देखें, फिर खुद पढ़ने की कोशिश करें, फिर उत्तर मिलाएँ:</p>
+      <div style="overflow-x:auto"><table class="k-table" id="wordTable"></table></div>
+    </article>
+
+    <!-- पाठ 6: परीक्षा -->
+    <article class="form-card reveal" style="max-width:100%;text-align:left;margin-bottom:34px" id="lesson6">
+      <div class="lesson-head">
+        <div class="lesson-num">६</div>
+        <h2 style="font-size:1.45rem">अंतिम परीक्षा — कैथी विशारद बनिए! 🏆</h2>
+      </div>
+      <p style="margin-bottom:16px">8 प्रश्न, हर सही उत्तर पर 1 अंक। 7 या अधिक अंक = <strong>"कैथी विशारद"</strong> की उपाधि! जितनी बार चाहें दीजिए।</p>
+      <div id="quizArea"></div>
+    </article>
+  </div>
+</section>
+
+<section class="bg-maroon">
+  <div class="container" style="text-align:center">
+    <h2 class="reveal">कैथी बचाओ अभियान से जुड़ें</h2>
+    <p class="reveal d1" style="max-width:620px;margin:14px auto 28px">फाउंडेशन कैथी की कक्षाएँ, अभ्यास सामग्री और पुराने दस्तावेज़ पढ़ने की कार्यशालाएँ आयोजित करता है। जुड़ने के लिए संदेश भेजें।</p>
+    <a href="https://wa.me/919301353166?text=%F0%9F%99%8F%20%E0%A4%AE%E0%A5%88%E0%A4%82%20%E0%A4%95%E0%A5%88%E0%A4%A5%E0%A5%80%20%E0%A4%B2%E0%A4%BF%E0%A4%AA%E0%A4%BF%20%E0%A4%85%E0%A4%AD%E0%A4%BF%E0%A4%AF%E0%A4%BE%E0%A4%A8%20%E0%A4%B8%E0%A5%87%20%E0%A4%9C%E0%A5%81%E0%A5%9C%E0%A4%A8%E0%A4%BE%20%E0%A4%9A%E0%A4%BE%E0%A4%B9%E0%A4%A4%E0%A4%BE/%E0%A4%9A%E0%A4%BE%E0%A4%B9%E0%A4%A4%E0%A5%80%20%E0%A4%B9%E0%A5%82%E0%A4%81%E0%A5%A4" target="_blank" rel="noopener" class="btn btn-saffron reveal d2">✍️ अभियान से जुड़ें</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/img/logo.png" alt="लोगो">
+          <strong style="color:var(--gold-light);font-family:var(--font-display)">श्री चित्रगुप्त कल्याण फाउंडेशन</strong>
+        </div>
+        <p style="font-size:.92rem">बिहार के हर जिले में सेवा, संस्कार और समाज कल्याण को समर्पित संस्था।</p>
+      </div>
+      <div>
+        <h4>पृष्ठ</h4>
+        <a href="index.html">मुखपृष्ठ</a>
+        <a href="kathayen.html">कथाएँ</a>
+        <a href="kaithi.html">कैथी लिपि</a>
+        <a href="districts.html">जिला संगठन</a>
+      </div>
+      <div>
+        <h4>जुड़ें</h4>
+        <a href="parivar.html">WhatsApp परिवार</a>
+        <a href="daan.html">दान करें</a>
+        <a href="sampark.html">संपर्क करें</a>
+        <a href="terms.html">नियम व शर्तें</a>
+      </div>
+      <div>
+        <h4>संपर्क</h4>
+        <p style="font-size:.92rem">📍 पटना, बिहार<br>📱 93013 53166<br>📱 95600 62149</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 भगवान श्री चित्रगुप्त कल्याण फाउंडेशन · सर्वाधिकार सुरक्षित ॥ श्री चित्रगुप्ताय नमः ॥</div>
+</footer>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const cp = n => String.fromCodePoint(n);
+
+  /* ---- वर्णमाला data (असली Unicode codepoints से) ---- */
+  const DEV_VOWELS = ['अ','आ','इ','ई','उ','ऊ','ए','ऐ','ओ','औ'];
+  const KAI_VOWELS = DEV_VOWELS.map((_, i) => cp(0x11083 + i));
+  const DEV_CONS = ['क','ख','ग','घ','ङ','च','छ','ज','झ','ञ','ट','ठ','ड','ड़','ढ','ढ़','ण','त','थ','द','ध','न','प','फ','ब','भ','म','य','र','ल','व','श','ष','स','ह'];
+  const KAI_CONS = DEV_CONS.map((_, i) => cp(0x1108D + i));
+  const DEV_MATRA = ['ा','ि','ी','ु','ू','े','ै','ो','ौ'];
+  const KAI_MATRA = DEV_MATRA.map((_, i) => cp(0x110B0 + i));
+  const VIRAMA = cp(0x110B9);
+
+  /* देवनागरी → कैथी सरल transliteration (शब्द बनाने के लिए) */
+  const MAP = {};
+  DEV_VOWELS.forEach((d, i) => MAP[d] = KAI_VOWELS[i]);
+  DEV_CONS.forEach((d, i) => MAP[d] = KAI_CONS[i]);
+  DEV_MATRA.forEach((d, i) => MAP[d] = KAI_MATRA[i]);
+  MAP['्'] = VIRAMA; MAP['ं'] = cp(0x11081); MAP['ः'] = cp(0x11082); MAP['ँ'] = cp(0x11080);
+  const toKaithi = s => [...s].map(ch => MAP[ch] ?? ch).join('');
+
+  /* ---- पाठ 2: स्वर cells ---- */
+  document.getElementById('vowelCells').innerHTML = DEV_VOWELS.map((d, i) =>
+    `<div class="k-cell"><span class="k-glyph kaithi">${KAI_VOWELS[i]}</span><span class="k-dev">${d}</span></div>`).join('');
+
+  /* ---- पाठ 3: व्यंजन cells ---- */
+  document.getElementById('consCells').innerHTML = DEV_CONS.map((d, i) =>
+    `<div class="k-cell"><span class="k-glyph kaithi">${KAI_CONS[i]}</span><span class="k-dev">${d}</span></div>`).join('');
+
+  /* ---- पाठ 4: मात्रा table (क पर) ---- */
+  const ka = 'क', kaK = MAP['क'];
+  document.getElementById('matraTable').innerHTML =
+    `<tr><th>देवनागरी</th>${DEV_MATRA.map(m => `<td class="k-dev">${ka + m}</td>`).join('')}</tr>
+     <tr><th>कैथी</th>${KAI_MATRA.map(m => `<td><span class="k-glyph kaithi">${kaK + m}</span></td>`).join('')}</tr>`;
+
+  /* ---- पाठ 5: शब्द ---- */
+  const WORDS = ['कलम','दवात','पटना','बिहार','कायस्थ','चित्रगुप्त','कैथी','समाज'];
+  document.getElementById('wordTable').innerHTML =
+    `<tr><th>कैथी में पढ़ें</th><th>उत्तर (देवनागरी)</th></tr>` +
+    WORDS.map(w => `<tr><td><span class="k-glyph kaithi" style="font-size:1.7rem">${toKaithi(w)}</span></td><td class="k-dev">${w}</td></tr>`).join('');
+
+  /* ---- प्रगति tracking ---- */
+  const PKEY = 'kaithiProgress';
+  const getP = () => JSON.parse(localStorage.getItem(PKEY) || '{}');
+  function updProgress() {
+    const p = getP();
+    const done = [1,2,3,4,5].filter(n => p['l' + n]).length + (p.quizPassed ? 1 : 0);
+    const pct = Math.round(done / 6 * 100);
+    document.getElementById('kProgress').style.width = pct + '%';
+    document.getElementById('kProgressTxt').textContent = pct + '%' + (pct === 100 ? ' — आप कैथी विशारद हैं! 🏆' : '');
+    document.querySelectorAll('.lesson-done').forEach(b => {
+      if (p['l' + b.dataset.lesson]) { b.textContent = 'पूरा हुआ ✓'; b.style.background = '#1e9e50'; }
+    });
+  }
+  document.querySelectorAll('.lesson-done').forEach(b =>
+    b.addEventListener('click', () => {
+      const p = getP(); p['l' + b.dataset.lesson] = true;
+      localStorage.setItem(PKEY, JSON.stringify(p)); updProgress();
+    }));
+  updProgress();
+
+  /* ---- पाठ 6: परीक्षा ---- */
+  const quizArea = document.getElementById('quizArea');
+  function buildQuiz() {
+    const bank = [];
+    [...Array(10).keys()].forEach(i => bank.push({ q: `यह कैथी स्वर कौन-सा है? <span class="kaithi" style="font-size:1.8rem">${KAI_VOWELS[i]}</span>`, a: DEV_VOWELS[i], pool: DEV_VOWELS }));
+    [5, 11, 17, 22, 26, 28, 34, 0, 7, 31].forEach(i => bank.push({ q: `यह कैथी व्यंजन कौन-सा है? <span class="kaithi" style="font-size:1.8rem">${KAI_CONS[i]}</span>`, a: DEV_CONS[i], pool: DEV_CONS }));
+    WORDS.forEach(w => bank.push({ q: `यह कौन-सा शब्द है? <span class="kaithi" style="font-size:1.7rem">${toKaithi(w)}</span>`, a: w, pool: WORDS }));
+    const qs = bank.sort(() => Math.random() - .5).slice(0, 8);
+    let idx = 0, score = 0;
+
+    function ask() {
+      if (idx >= qs.length) {
+        const pass = score >= 7; /* 8 में से 7 = ~85% */
+        if (pass) { const p = getP(); p.quizPassed = true; localStorage.setItem(PKEY, JSON.stringify(p)); updProgress(); }
+        quizArea.innerHTML = `
+          <div class="empty-state" style="border-style:solid">
+            <span class="hero-badge">${pass ? '🏆' : '📖'}</span>
+            <h3 style="margin:10px 0">${score} / ${qs.length}</h3>
+            <p>${pass ? 'बधाई हो! आप अब "कैथी विशारद" हैं — अब आपसे आपके पुरखों की लिखावट नहीं छुपेगी। औरों को भी सिखाइए!' : 'अच्छी कोशिश! पाठ दोहराकर फिर से दीजिए — विशारद बनना तय है।'}</p>
+            <button class="btn btn-saffron" style="margin-top:14px" id="quizRetry">फिर से परीक्षा दें</button>
+          </div>`;
+        document.getElementById('quizRetry').addEventListener('click', buildQuiz);
+        return;
+      }
+      const q = qs[idx];
+      const opts = [...new Set([q.a, ...q.pool.filter(o => o !== q.a).sort(() => Math.random() - .5).slice(0, 3)])].sort(() => Math.random() - .5);
+      quizArea.innerHTML = `
+        <p style="font-weight:700;color:var(--maroon);font-size:1.1rem">प्रश्न ${idx + 1}/${qs.length} — ${q.q}</p>
+        ${opts.map(o => `<button class="quiz-opt" data-v="${o}">${o}</button>`).join('')}
+        <p style="text-align:right;color:var(--ink-soft);font-size:.9rem">अंक: ${score}</p>`;
+      quizArea.querySelectorAll('.quiz-opt').forEach(b => b.addEventListener('click', () => {
+        if (b.dataset.v === q.a) { b.classList.add('right'); score++; }
+        else {
+          b.classList.add('wrong');
+          quizArea.querySelector(`[data-v="${q.a}"]`).classList.add('right');
+        }
+        quizArea.querySelectorAll('.quiz-opt').forEach(x => x.style.pointerEvents = 'none');
+        setTimeout(() => { idx++; ask(); }, 900);
+      }));
+    }
+    ask();
+  }
+  buildQuiz();
+});
+</script>
+</body>
+</html>
